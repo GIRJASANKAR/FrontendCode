@@ -6,7 +6,6 @@ export function Counter() {
   const updateCount = () => {
     setCount(prevCount => prevCount + diff)
   }
-
   return (
     <div>
       <button data-testid="decrement-button" onClick={()=>updateCount(-1)}>-</button>
