@@ -7,7 +7,6 @@ export function useTimeout(callback: () => void, delay: number) {
   const timeoutId= setTimeout(()=>{callbackref.current()},delay);
    return ()=>{clearTimeout(timeoutId)};
   },[delay])
-  // your code here
 }
 
 export function App() {
