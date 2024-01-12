@@ -1,3 +1,6 @@
+// Create a hook to tell if it is the first render.
+
+
 import React, { useRef } from "react";
 
 export function useIsFirstRender(): boolean {
