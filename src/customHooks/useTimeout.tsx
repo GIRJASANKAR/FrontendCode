@@ -7,6 +7,8 @@ import React, { useEffect, useRef } from "react";
 
 
 export function useTimeout(callback: () => void, delay: number) {
+
+  // for 2nd condition i am using useRef;
   const callbackref=useRef(callback);
   callbackref.current=callback;
   useEffect(()=>{
