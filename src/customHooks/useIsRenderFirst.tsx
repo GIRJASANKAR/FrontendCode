@@ -12,7 +12,6 @@ export function useIsFirstRender(): boolean {
   }
 return false;
 
-
 }
 
 // if you want to try your code on the right panel
