@@ -7,43 +7,50 @@ const Accordion = () => {
   const [javascripttoggle, setjavascripttoggle] = useState(false);
   return (
     <>
-      <div className="main-div flex flex-col space-y-8">
-        <div className="border">
+      <div className="main-div flex flex-col space-y-8 w-3/4">
+        <div className="border-b">
           <div
-            className="flex justify-between items-center"
+            className="flex px-4 cursor-pointer pb-1 justify-between items-center hover:bg-gray-100 hover:rounded-sm"
             onClick={() => sethtmlToggle(!htmltoggle)}
           >
-            <p className="bg-gray p-4">HTML</p>
-            <span aria-hidden={true} className="accordion-icon" />
+            <p>HTML</p>
+            <span aria-hidden={true} className={htmltoggle ? 'flip accordion-icon':'accordion-icon'} />
           </div>
           {htmltoggle && (
-            <div>
+            <div className="px-4 py-1">
               The HyperText Markup Language or HTML is the standard markup
               language for documents designed to be displayed in a web browser.
             </div>
           )}
         </div>
-        <div className="">
-          <p className="bg-gray p-4" onClick={() => setcssToggle(!csstoggle)}>
-            CSS
-          </p>
+        <div className="border-b">
+          <div
+            className="flex px-4 pb-1 cursor-pointer justify-between items-center  hover:bg-gray-100 hover:rounded-sm"
+            onClick={() => setcssToggle(!csstoggle)}
+          >
+            <p className="bg-gray ">CSS</p>
+            <span aria-hidden={true}  className={htmltoggle ? 'flip accordion-icon':'accordion-icon'} />
+          </div>
+
           {csstoggle && (
-            <div>
+            <div className="px-4 py-1">
               Cascading Style Sheets is a style sheet language used for
               describing the presentation of a document written in a markup
               language such as HTML or XML.
             </div>
           )}
         </div>
-        <div className="">
-          <p
-            className="bg-gray p-4"
+        <div className="border-b">
+          <div
+            className="flex justify-between cursor-pointer items-center px-4 pb-1  hover:bg-gray-100 hover:rounded-sm"
             onClick={() => setjavascripttoggle(!javascripttoggle)}
           >
-            JAVASCRIPT
-          </p>
+            <p className="bg-gray ">JAVASCRIPT</p>
+            <span aria-hidden={true}  className={htmltoggle ? 'flip accordion-icon':'accordion-icon'} />
+          </div>
+
           {javascripttoggle && (
-            <div>
+            <div className="px-4 py-1">
               JavaScript, often abbreviated as JS, is a programming language
               that is one of the core technologies of the World Wide Web,
               alongside HTML and CSS.
@@ -54,4 +61,5 @@ const Accordion = () => {
     </>
   );
 };
+
 export default Accordion;
